@@ -137,3 +137,38 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# =============================================================================
+# AI / LLM / Copilot – keep template files tracked, protect secrets & caches
+# =============================================================================
+
+# Private or secret variants of any AI file (prefix or suffix convention)
+*.secret.md
+*.private.md
+*.private.prompt.md
+*.secret.prompt.md
+*.private.instructions.md
+*.private.agent.md
+*.local.md
+
+# Context7 MCP cache (future harness caching)
+.context7/
+context7-cache/
+.ai-cache/
+ai-cache/
+.mcp-cache/
+
+# Agent run outputs / scratch pads (never commit raw LLM output)
+**/output/
+*.agent.output.md
+*.prompt.output.md
+
+# Local AI configuration overrides (machine-specific, may contain API keys)
+.ai.local.*
+.copilot.local.*
+mcp.local.json
+
+# API keys / credentials that may appear near AI config
+*.pem
+*.key
+!*.pub.key
