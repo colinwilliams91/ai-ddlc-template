@@ -91,9 +91,9 @@ This template solves four problems:
    - Shell helpers that automate maintenance operations (e.g., prompting the
      Documenter to refresh `CONTEXT.md`).
 
-8. **Skills** (`.github/skills/`)
-   - Skeleton directory; add project-specific capability modules here.
-   - No files are committed in the base template.
+8. **Skills** (`.agents/skills/`)
+  - Shared capability modules installed for multi-harness use.
+  - The base template may vendor reusable skills here and track them via `skills-lock.json`.
 
 ### 3.2 Abstraction Layers
 
@@ -445,7 +445,7 @@ To use this template in a new project:
 1. Update `CONTEXT.md` → Project Overview with the project name, stack, and goals.
 2. Add project-specific conventions to `.github/instructions/`.
 3. Add task-specific prompts to `.github/prompts/`.
-4. Drop capability modules into `.github/skills/` as needed.
+4. Drop shared capability modules into `.agents/skills/` as needed.
 5. Configure external plugins in `.github/plugins/`.
 6. Everything else (agents, RALPH loop, inter-agent protocol) remains unchanged.
 
@@ -489,7 +489,7 @@ To use this template in a new project:
 | Agent roster | Add `*.agent.md` files to `.github/agents/` |
 | Coding standards | Add `*.instructions.md` files to `.github/instructions/` |
 | Task workflows | Add `*.prompt.md` files to `.github/prompts/` |
-| Capabilities | Add modules to `.github/skills/` |
+| Capabilities | Add modules to `.agents/skills/` |
 | Integrations | Add subdirectories to `.github/plugins/` |
 | Automation | Add scripts to `.github/scripts/` |
 
