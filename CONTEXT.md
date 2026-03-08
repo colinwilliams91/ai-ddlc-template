@@ -35,6 +35,7 @@
 | AD-004 | `CONTEXT.md` is the inter-agent bus | Stateless agents need a shared, file-based state store |
 | AD-005 | Context7 MCP for library docs | Avoids hallucinated APIs; future caching will reduce token cost |
 | AD-006 | Secrets never committed | `.gitignore` blocks `.env`, `*.secret.md`, `mcp.local.json`, etc. |
+| AD-007 | Issue-Driven Orchestration is the default human-team workflow | Every work unit begins as a GitHub Issue; enforced via `issue-driven-orchestration.instructions.md`, `issue-intake.agent.md`, `resolve-issue.prompt.md`, `labels.yml`, and the enhanced PR template |
 
 ---
 
@@ -56,6 +57,8 @@ _No tasks currently in flight. Update this section when work begins._
 - **Instruction files:** `<name>.instructions.md` in `.github/instructions/`.
 - **Commits:** Conventional Commits (`feat:`, `fix:`, `docs:`, `chore:`, …).
 - **Secrets:** Always via environment variables; never hard-coded.
+- **IDO default:** All work starts as a GitHub Issue. See `.github/instructions/issue-driven-orchestration.instructions.md`.
+- **Label taxonomy:** `type:*`, `agent:*`, `status:*`, `priority:*`. Definitions in `.github/labels.yml`.
 - See `.github/instructions/coding-standards.instructions.md` for full rules.
 
 ---
@@ -64,6 +67,7 @@ _No tasks currently in flight. Update this section when work begins._
 
 | Agent | File | LLM Preference | Status |
 |-------|------|----------------|--------|
+| Issue Intake | `.github/agents/issue-intake.agent.md` | Any | Active |
 | Orchestrator | `.github/agents/orchestrator.agent.md` | Any | Active |
 | Implementer | `.github/agents/implementer.agent.md` | Claude | Active |
 | Reviewer | `.github/agents/reviewer.agent.md` | OpenAI | Active |
