@@ -37,9 +37,13 @@ using GitHub Copilot in VSCode with multi-agent parallelisation.
 │   └── ralph-loop.prompt.md
 ├── scripts/              # Utility/maintenance scripts
 │   └── sync-context.sh   – reminds Documenter to refresh CONTEXT.md
-├── skills/               # Capability modules (add as needed)
 └── copilot-instructions.md  – master workspace instructions for Copilot
+.agents/
+└── skills/               # Shared capability modules for multi-harness workflows
 CONTEXT.md                   # Centralized agent-alignment document
+AGENTS.md                    # Root adapter for agentic tools that read AGENTS.md
+CLAUDE.md                    # Root adapter for Claude-style harnesses
+.cursorrules                # Root adapter for Cursor-style harnesses
 ```
 
 ---
@@ -75,5 +79,5 @@ All AI-sensitive patterns are git-ignored (see `.gitignore`):
 1. Update the **Project Overview** section of `CONTEXT.md`.
 2. Add project-specific instructions to `.github/instructions/`.
 3. Add task prompts to `.github/prompts/`.
-4. Drop `.github/skills/` modules as needed.
+4. Drop shared capability modules into `.agents/skills/` as needed.
 5. Everything else stays the same — the scaffold is stack-agnostic.
