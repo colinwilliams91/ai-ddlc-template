@@ -3,10 +3,6 @@ name: Documenter
 description: >
   Maintains CONTEXT.md as the single source of truth for all agents. Uses @codebase
   to scan the workspace and reflect the current state accurately.
-tools:
-  - codebase
-  - read_file
-  - write_file
 ---
 
 # Documenter Agent
@@ -28,6 +24,7 @@ workspace state.
 3. Update only the sections that have genuinely changed.
 4. Preserve the existing section structure; do not reformat without reason.
 5. Commit message convention: `docs(context): <what changed and why>`.
+6. Keep `CONTEXT.md` compact. Move older milestone entries to `context-history.md` instead of letting the session-facing history grow indefinitely.
 
 ## Sections to Maintain in CONTEXT.md
 - **Project Overview** – purpose, tech stack, target environment
@@ -36,4 +33,8 @@ workspace state.
 - **Conventions** – naming, file structure, coding standards in use
 - **Agent Roster** – which agents are active and their current roles
 - **Open Questions** – unresolved decisions that need human input
-- **Changelog** – timestamped log of significant changes
+- **Recent Milestones** – compact list of the latest significant repository changes
+
+## Historical Record
+- Store the full milestone timeline in `context-history.md`.
+- Use git history for exact diffs, authorship, and commit-level forensics.

@@ -62,36 +62,40 @@ This template solves four problems:
 1. **`CONTEXT.md`** — Workspace state document.
    - Single source of truth for all agents.
    - Contains: project overview, architecture decisions, active work, conventions,
-     agent roster, open questions, changelog.
+    agent roster, open questions, recent milestones.
    - Owned by the Documenter; read by every other agent at session start.
 
-2. **Agent Definitions** (`.github/agents/*.agent.md`)
+2. **`context-history.md`** — Historical milestone log.
+  - Stores older repository milestones that are no longer useful to inject into every session.
+  - Complements git history by preserving semantic, agent-oriented change summaries.
+
+3. **Agent Definitions** (`.github/agents/*.agent.md`)
    - Structured Markdown files that define an agent's identity, responsibilities,
      tools, and output contracts.
    - Loaded by GitHub Copilot as persona contexts.
 
-3. **Prompts** (`.github/prompts/*.prompt.md`)
+4. **Prompts** (`.github/prompts/*.prompt.md`)
    - Reusable, parameterised task descriptions that an operator pastes into Copilot
      Chat to invoke a specific workflow.
    - Decoupled from agent definitions so either can evolve independently.
 
-4. **Coding Standards** (`.github/instructions/*.instructions.md`)
+5. **Coding Standards** (`.github/instructions/*.instructions.md`)
    - Workspace-scoped rules applied automatically by Copilot to every chat session.
    - Cover naming, testing, secrets, dependency management, and commit style.
 
-5. **RALPH Loop**
+6. **RALPH Loop**
    - An iterative improvement protocol executed as a cycle of agent invocations.
    - Terminates when Reviewer issues `CONSENSUS` and all Assess items are resolved.
 
-6. **Plugin Configurations** (`.github/plugins/`)
+7. **Plugin Configurations** (`.github/plugins/`)
    - Optional extensions bundled with their usage documentation.
    - Example: Context7 MCP for live library documentation injection.
 
-7. **Utility Scripts** (`.github/scripts/`)
+8. **Utility Scripts** (`.github/scripts/`)
    - Shell helpers that automate maintenance operations (e.g., prompting the
      Documenter to refresh `CONTEXT.md`).
 
-8. **Skills** (`.agents/skills/`)
+9. **Skills** (`.agents/skills/`)
   - Shared capability modules installed for multi-harness use.
   - The base template may vendor reusable skills here and track them via `skills-lock.json`.
 
@@ -189,7 +193,7 @@ Fields:
   `add-auth-middleware`.
 - **Architecture decision IDs** — `AD-NNN` (zero-padded to three digits).
 - **Open question IDs** — `OQ-NNN`.
-- **Changelog entries** — ISO-8601 date (`YYYY-MM-DD`).
+- **Recent milestone entries** — ISO-8601 date (`YYYY-MM-DD`).
 
 ---
 
@@ -418,7 +422,7 @@ Every `CONTEXT.md` must contain the following sections:
 | Conventions | Naming, structure, and coding standards in force |
 | Agent Roster | Active agents, preferred LLMs, and current roles |
 | Open Questions | Unresolved decisions requiring human input |
-| Changelog | Timestamped log of significant changes |
+| Recent Milestones | Compact log of the latest significant changes relevant to agent context |
 
 ### 8.2 Update Frequency
 
@@ -428,6 +432,8 @@ Every `CONTEXT.md` must contain the following sections:
 - After every architectural decision.
 - After every completed RALPH loop.
 - At the start of any new multi-session task.
+
+`context-history.md` should be refreshed when older milestone entries are removed from `CONTEXT.md` to keep the session-facing context concise.
 
 ### 8.3 Staleness Detection
 

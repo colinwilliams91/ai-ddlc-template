@@ -1,0 +1,17 @@
+# Context History
+
+Historical repository milestones live here so `CONTEXT.md` can stay compact and focused on the current agent-facing state.
+
+Use this file for semantic milestone history.
+Use git history when you need exact diffs, authorship, or commit-level details.
+
+## Historical Milestones
+
+| Date | Change | Agent |
+|------|--------|-------|
+| 2026-02-21 | Initial scaffold created | Copilot |
+| 2026-03-09 | Documented `.agents/skills/` as the canonical shared skills path and added root harness adapters | Copilot |
+| 2026-03-09 | Added a root Cursor adapter that routes to `CONTEXT.md` | Copilot |
+| 2026-03-24 | Updated the session auto-commit hook to use summarized Conventional Commits at session end without timestamps or auto-push | Copilot |
+| 2026-03-25 | Implemented three-layer Git workflow automation with PostToolUse auto-stage hooks, a portable `checkpoint-commit` skill, and Stop-hook fallback autosave | Copilot |
+| 2026-03-26 | Split `CONTEXT.md` history into compact Recent Milestones and a separate historical timeline file | Copilot |

@@ -11,6 +11,7 @@ using GitHub Copilot in VSCode with multi-agent parallelisation.
 2. **Open in VSCode** – Copilot will automatically pick up
    `.github/copilot-instructions.md` as workspace instructions.
 3. **Read `CONTEXT.md`** – this is the live state document that all agents share.
+   Use `context-history.md` only for older repository milestones.
 4. **Copy a prompt** – use `.github/prompts/task-template.prompt.md` to kick off
    any new task.
 5. **Drive iteration with RALPH** – use `.github/prompts/ralph-loop.prompt.md`
@@ -47,6 +48,7 @@ using GitHub Copilot in VSCode with multi-agent parallelisation.
 └── skills/               # Shared capability modules for multi-harness workflows
    └── checkpoint-commit/     – diff-based commit checkpoint slash command
 CONTEXT.md                   # Centralized agent-alignment document
+context-history.md           # Historical repository milestones kept out of session-critical context
 AGENTS.md                    # Root adapter for agentic tools that read AGENTS.md
 CLAUDE.md                    # Root adapter for Claude-style harnesses
 .cursorrules                # Root adapter for Cursor-style harnesses

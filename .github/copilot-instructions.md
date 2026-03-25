@@ -9,7 +9,7 @@ all agents aligned to the latest state described in [`CONTEXT.md`](../CONTEXT.md
 ## Core Principles
 
 1. **CONTEXT.md is the source of truth.** Always read it before acting and request the
-   documenter agent updates it after any meaningful change.
+   documenter agent updates it after any meaningful change. Keep `CONTEXT.md` concise; store older milestone history in `context-history.md`.
 2. **Parallelise wherever safe.** Independent sub-tasks should be dispatched to separate
    agents simultaneously. Serialise only when there is a true data dependency.
 3. **Claude implements; OpenAI reviews.** Implementation agents (Claude) write or refactor
@@ -34,6 +34,7 @@ all agents aligned to the latest state described in [`CONTEXT.md`](../CONTEXT.md
 | `.github/scripts/` | Utility/maintenance scripts |
 | `.agents/skills/` | Shared capability modules installed for multi-harness reuse |
 | `CONTEXT.md` | Live workspace state – updated by the documenter agent |
+| `context-history.md` | Historical milestone log kept outside the session-critical context file |
 | `AGENTS.md` / `CLAUDE.md` | Thin root adapters for non-Copilot harnesses |
 
 ---
