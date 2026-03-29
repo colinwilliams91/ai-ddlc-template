@@ -1,6 +1,23 @@
 $ErrorActionPreference = 'Stop'
 
 try {
+  # Read all stdin up-front so we can extract the workspace cwd before running git.
+  # VS Code passes {"cwd": "<workspace path>", ...} on stdin for every hook event.
+  $rawInput = [Console]::In.ReadToEnd()
+
+  if (-not [string]::IsNullOrWhiteSpace($rawInput)) {
+    try {
+      $hookPayload = $rawInput | ConvertFrom-Json -AsHashtable -Depth 4
+      if ($hookPayload.ContainsKey('cwd') -and -not [string]::IsNullOrWhiteSpace($hookPayload['cwd'])) {
+        $hookCwd = $hookPayload['cwd']
+        if (Test-Path $hookCwd -PathType Container) {
+          Set-Location -Path $hookCwd
+        }
+      }
+    }
+    catch { }
+  }
+
   & git rev-parse --is-inside-work-tree 2>$null | Out-Null
   if ($LASTEXITCODE -ne 0) {
     exit 0
@@ -98,7 +115,7 @@ try {
     Add-CandidatePath -Value $env:TOOL_INPUT_FILE_PATH
   }
 
-  $rawInput = [Console]::In.ReadToEnd()
+  # Reuse the stdin content already captured at the top of the script
   if (-not [string]::IsNullOrWhiteSpace($rawInput)) {
     try {
       $payload = $rawInput | ConvertFrom-Json -AsHashtable -Depth 32
