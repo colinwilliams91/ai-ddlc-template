@@ -20,6 +20,7 @@
 | **Portable skill path** | `.agents/skills/` |
 
 ### Goals
+
 - Provide a lightweight, language-agnostic scaffold for AI-driven development.
 - Facilitate multi-agent parallelization with a clear inter-agent protocol.
 - Be easily cloned and adapted to any project stack.

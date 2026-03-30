@@ -27,7 +27,7 @@ using GitHub Copilot in VSCode with multi-agent parallelisation.
 
 ## Directory Structure
 
-```
+```text
 .github/
 ├── agents/               # AI persona definitions (.agent.md)
 │   ├── orchestrator.agent.md   – task decomposition & dispatch
@@ -65,7 +65,7 @@ CLAUDE.md                    # Root adapter for Claude-style harnesses
 
 ## Multi-Agent Protocol
 
-```
+```text
 User → Orchestrator → Implementer (Claude)
                     ↘ Reviewer (OpenAI) ←→ RALPH loop
                     → Documenter → CONTEXT.md

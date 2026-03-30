@@ -61,7 +61,7 @@ overrides a rule with documented justification.
 
 Follow [Conventional Commits](https://www.conventionalcommits.org/):
 
-```
+```text
 <type>(<scope>): <short description>
 
 [optional body]

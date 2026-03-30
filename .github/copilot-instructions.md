@@ -62,7 +62,7 @@ Agents share state exclusively through `CONTEXT.md` and the workspace file tree.
 that carries clear acceptance criteria, a `type:*` label, an `agent:*` label, and a
 `priority:*` label.
 
-```
+```text
 Issue filed → Issue Intake triages → agent dispatched → PR opened (Closes #N) →
 Reviewer consensus → human approval → merge → Documenter updates CONTEXT.md
 ```
@@ -82,7 +82,7 @@ When an issue carries the `agent:copilot` label, assign it to `copilot-swe-agent
 via the GitHub web UI or the API. Pass the issue's acceptance criteria plus the
 following as `customInstructions`:
 
-```
+```text
 Repository context: .github/copilot-instructions.md and CONTEXT.md.
 Coding standards: .github/instructions/coding-standards.instructions.md.
 IDO rules: .github/instructions/issue-driven-orchestration.instructions.md.

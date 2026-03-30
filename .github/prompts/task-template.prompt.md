@@ -4,7 +4,7 @@ description: >
   Use this as a starting point for any discrete unit of work handed to an agent.
 ---
 
-# Task: <Short Task Title>
+# Task: `Short Task Title`
 
 ## Context
 <!-- What is the broader goal this task contributes to? Point to SPEC.md and CONTEXT.md if relevant. -->
