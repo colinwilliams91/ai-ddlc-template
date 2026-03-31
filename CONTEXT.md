@@ -174,7 +174,9 @@ Label taxonomy: `.github/labels.yml`
 
 ## Recent Milestones
 
-Older milestone history lives in `context-history.md`. Use git history when you need exact diffs, authorship, or commit-level details.
+This table keeps only the last 10 milestones.
+When a new milestone would become the 11th entry, move the oldest row to `context-history.md` and remove it from this table in the same update.
+Do not duplicate archived entries here. Use git history when you need exact diffs, authorship, or commit-level details.
 
 | Date | Change | Agent |
 |------|--------|-------|
@@ -188,4 +190,4 @@ Older milestone history lives in `context-history.md`. Use git history when you 
 
 ---
 
-_Last updated by: Human — agents should keep this current._
+_Last updated by: Copilot — agents should keep this current._
