@@ -69,3 +69,8 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 ```
 
 Types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`, `perf`, `ci`.
+
+## 9. TODO:
+
+- **IDO default:** If enabled, all work starts as a GitHub Issue. See `.github/instructions/issue-driven-orchestration.instructions.md`.
+- **Label taxonomy:** `type:*`, `agent:*`, `status:*`, `priority:*`. Definitions in `.github/labels.yml`.
