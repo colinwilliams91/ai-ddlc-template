@@ -32,8 +32,8 @@ Context7 is configured in your **global / workspace `mcp.json`**. A minimal entr
 
 Add `use context7` at the end of any prompt that references a library:
 
-```
-Refactor the authentication middleware to use the latest passport.js API. use context7
+```text
+Refactor the authentication middlewareto use the latest passport.js API. use context7
 ```
 
 Context7 will resolve the correct version of the docs and inject them into the

@@ -28,6 +28,7 @@ _Agents share state exclusively through `CONTEXT.md` and the workspace file tree
 This repository provides a scaffold for AI-driven development with multiple collaborating agents. Future scope is to port it to a CLI tool to generate structure with user configurable options.
 
 ### Goals
+
 - Provide a lightweight, language-agnostic scaffold for AI-driven development.
 - Facilitate multi-agent parallelization with a clear inter-agent protocol.
 - Easily adapt to any project stack.

@@ -28,6 +28,7 @@ The hook package scripts live in this directory and are referenced by that top-l
 ## Installation
 
 1. Ensure the shell scripts are executable on macOS and Linux:
+
    ```bash
    chmod +x .github/hooks/session-auto-commit/auto-commit.sh
    chmod +x .github/hooks/session-auto-commit/auto-stage.sh
