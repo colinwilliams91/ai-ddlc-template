@@ -1,10 +1,13 @@
 ---
 name: playwright-cli
 description: Automate browser interactions, test web pages and work with Playwright tests.
+compatibility: Requires playwright-cli to be installed (globally or locally via npx)
 allowed-tools: Bash(playwright-cli:*) Bash(npx:*) Bash(npm:*)
 ---
 
 # Browser Automation with playwright-cli
+
+Use this file as the command reference. For tool-selection rules, security boundaries, and harness portability, see `.github/instructions/browser-tooling.instructions.md`.
 
 ## Quick start
 
@@ -156,6 +159,7 @@ playwright-cli video-stop video.webm
 ```
 
 ## Open parameters
+
 ```bash
 # Use specific browser when creating session
 playwright-cli open --browser=chrome
@@ -241,21 +245,23 @@ playwright-cli kill-all
 
 ## Installation
 
-If global `playwright-cli` command is not available, try a local version via `npx playwright-cli`:
+Prefer a project-local installation and invoke it via `npx playwright-cli`:
 
 ```bash
 npx --no-install playwright-cli --version
 ```
 
-`playwright-cli` is installed as a local devDependency via the project `package.json`. Run `npm install` from the repository root once, then invoke via:
+If the command is not available locally yet, install it in the project first:
 
 ```bash
-npx playwright-cli <command>
-# or
-npm run browser -- <command>
+npm install --save-dev @playwright/cli@latest
 ```
 
-Do **not** install globally; the local version is pinned in `package-lock.json`.
+When a local version is available, use `npx playwright-cli` in commands. A global install is only a fallback:
+
+```bash
+npm install -g @playwright/cli@latest
+```
 
 ## Example: Form submission
 
@@ -263,8 +269,8 @@ Do **not** install globally; the local version is pinned in `package-lock.json`.
 playwright-cli open https://example.com/form
 playwright-cli snapshot
 
-playwright-cli fill e1 "user@example.com"
-playwright-cli fill e2 "password123"
+playwright-cli fill e1 "$EMAIL"
+playwright-cli fill e2 "$PASSWORD"
 playwright-cli click e3
 playwright-cli snapshot
 playwright-cli close

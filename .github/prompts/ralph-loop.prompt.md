@@ -29,7 +29,9 @@ Using the information above, produce the RALPH loop output:
 Output using the template from `.github/agents/ralph.agent.md`.
 
 ## Exit Check
+
 Answer YES or NO to each:
+
 - [ ] Reviewer issued `CONSENSUS`?
 - [ ] All Assess items resolved?
 - [ ] Hypothesized outcome confirmed?
