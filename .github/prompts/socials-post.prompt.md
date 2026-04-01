@@ -19,36 +19,35 @@ If no argument provided, ask the user for their tweet idea or topic.
 ## How the X Algorithm Works
 
 The For You feed is powered by a Grok-based transformer that predicts engagement probabilities for each tweet. Maximize the weighted score:
-
-**Final Score = Σ (weight × P(action))**
-
-**Positive signals (higher weights):**
-- P(like) — immediate resonance
-- P(reply) — conversation triggers
-- P(repost) — share-worthy content
-- P(quote) — content worth adding to
-- P(click) — curiosity hooks
-- P(dwell) — stops the scroll
-- P(share) — off-platform worthy
-- P(follow_author) — "I need more of this"
-
-**Negative signals (hurt your score):**
-- P(not_interested) — boring, irrelevant
-- P(block_author) — annoying, spammy
-- P(mute_author) — too much, too often
-- P(report) — rule-breaking vibes
+- **Final Score = Σ (weight × P(action))**
+- **Positive signals (higher weights):**
+  - P(like) — immediate resonance
+  - P(reply) — conversation triggers
+  - P(repost) — share-worthy content
+  - P(quote) — content worth adding to
+  - P(click) — curiosity hooks
+  - P(dwell) — stops the scroll
+  - P(share) — off-platform worthy
+  - P(follow_author) — "I need more of this"
+- **Negative signals (hurt your score):**
+  - P(not_interested) — boring, irrelevant
+  - P(block_author) — annoying, spammy
+  - P(mute_author) — too much, too often
+  - P(report) — rule-breaking vibes
 
 ## Optimization Framework
 
 Optimize across these dimensions:
 
 ### 1. Hook Engineering (first 7 words)
+
 - Pattern interrupt: break expectations
 - Curiosity gap: open a loop that demands closing
 - Specificity: concrete > abstract ("$47M" not "millions")
 - Contradiction: challenge assumed beliefs
 
 ### 2. Emotional Resonance
+
 Map to high-arousal emotions that drive action:
 - Awe ("this changes everything")
 - Anger (righteous, not toxic)
@@ -59,6 +58,7 @@ Map to high-arousal emotions that drive action:
 Avoid low-arousal states: sadness, contentment, boredom
 
 ### 3. Reply Maximization
+
 Build in reply triggers:
 - Hot takes that demand response
 - Questions (real or rhetorical)
@@ -67,6 +67,7 @@ Build in reply triggers:
 - Polarizing framing on non-toxic topics
 
 ### 4. Repost Psychology
+
 Make it identity-reinforcing:
 - "This is the kind of person I am"
 - Makes the sharer look smart/informed/funny
