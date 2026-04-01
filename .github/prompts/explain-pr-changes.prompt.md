@@ -69,8 +69,11 @@ For **each changeset**, you must provide the following:
 1.  **A meaningful title** for the group of changes (e.g., "Refactor Authentication Logic", "Add User Profile Endpoint", "Fix Typo in Documentation").
 2.  **A list of files affected** in this changeset.
 3.  **A bulleted summary** of the changes. Be specific.
+
     - **Crucially**, your summary must include a note about alterations to the signatures of exported functions, modifications to global data structures, or any changes that affect the external API or public behavior of the code.
+
 4.  **A triage status** based on the following strict criteria:
+
     - `NEEDS_REVIEW`: The diff involves any modifications to logic or functionality. This includes changes to control flow, algorithms, variable assignments, function calls, or public-facing contracts that might impact behavior.
     - `APPROVED`: The diff _only_ contains trivial changes that do not affect code logic, such as fixing typos in comments, code formatting, or renaming a private variable for clarity.
     - **When in doubt, always triage as `NEEDS_REVIEW`.**
