@@ -12,7 +12,7 @@ through a dedicated **Penpot MCP Plugin** that runs inside the Penpot editor.
 
 ## Architecture
 
-```
+```text
 AI Client (LLM)
     │  MCP (HTTP/SSE or stdio-proxy)
     ▼
@@ -82,9 +82,11 @@ Both options start:
 1. Open Penpot in your browser and navigate to a design file.
 2. Open the **Plugins** menu.
 3. Load the plugin using the development URL:
-   ```
+
+   ```text
    http://localhost:4400/manifest.json
    ```
+
 4. Open the plugin UI.
 5. Click **"Connect to MCP server"** — the status should change to **"Connected to MCP server"**.
 
