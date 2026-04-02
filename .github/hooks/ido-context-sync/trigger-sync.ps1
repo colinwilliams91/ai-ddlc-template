@@ -12,7 +12,7 @@ if (-not $repoRoot) {
     exit 0
 }
 
-$syncScript = Join-Path $repoRoot '.github\scripts\sync-context.sh'
+$syncScript = Join-Path $repoRoot '.github/scripts/sync-context.sh'
 if (-not (Test-Path $syncScript)) {
     exit 0
 }
