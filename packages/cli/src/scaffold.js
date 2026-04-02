@@ -32,6 +32,8 @@ const FEATURE_MAP = {
   hooks: [
     { src: 'hooks/session-auto-commit.json', dest: '.github/hooks/session-auto-commit.json' },
     { src: 'hooks/session-auto-commit', dest: '.github/hooks/session-auto-commit' },
+    { src: 'hooks/ido-context-sync.json', dest: '.github/hooks/ido-context-sync.json' },
+    { src: 'hooks/ido-context-sync', dest: '.github/hooks/ido-context-sync' },
   ],
   ido: [
     { src: 'ido/ISSUE_TEMPLATE', dest: '.github/ISSUE_TEMPLATE' },
