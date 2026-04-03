@@ -6,6 +6,7 @@ using GitHub Copilot in VSCode with multi-agent parallelization.
 ---
 
 ## Quick Start
+
 ***TODO: Quick Start is stale and refers to deprecated repo-template version. Needs to be completely refreshed to match the new CLI-based scaffold.***
 
 1. **Clone or use as template** – click *Use this template* on GitHub.
