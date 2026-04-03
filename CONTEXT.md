@@ -26,7 +26,9 @@
 
 ## Project Overview
 
-This repository provides a scaffold for AI-driven development with multiple collaborating agents. Future scope is to port it to a CLI tool to generate structure with user configurable options.
+This repository is the **`gaitor-orchestrator-cli`** — a Node.js CLI tool that scaffolds new AI-Driven Development Lifecycle (AI-DDLC) workspaces, similar to `create-react-app`. Users run `npx gaitor-orchestrator-cli <project-name>` to get an interactive setup with opt-in features.
+
+The CLI source lives in `packages/cli/`. The template files it scaffolds live in `packages/cli/templates/`.
 
 ### Goals
 
@@ -140,6 +142,8 @@ Optional future extensions: issue intake agent, routing prompt, and label manife
 | `.github/plugins/` | Bundled plugin configurations |
 | `.github/scripts/` | Utility/maintenance scripts |
 | `.agents/skills/` | Shared capability modules installed for multi-harness reuse |
+| `packages/cli/` | `gaitor-orchestrator-cli` — the Node.js scaffolding CLI |
+| `packages/cli/templates/` | Template files embedded in the CLI package for scaffolding |
 | `SPEC.md` | Project-scoped specification draft refined by the user and agents |
 | `template-spec.md` | Internal design rationale for maintaining this scaffold |
 | `CONTEXT.md` | Live workspace state – updated by the documenter agent |
@@ -186,6 +190,7 @@ Do not duplicate archived entries here. Use git history when you need exact diff
 | Date | Change | Agent |
 |------|--------|-------|
 | 2026-04-02 | Added an `ido-context-sync` workspace hook package that runs `.github/scripts/sync-context.sh` on session stop so human-in-loop and IDO workflows can prompt `CONTEXT.md` and milestone refreshes | Copilot |
+| 2026-04-01 | Implemented `gaitor-orchestrator-cli` v0.1.0 in `packages/cli/` — interactive CLI scaffolding tool with opt-in features for agents, instructions, prompts, hooks, IDO, tools, and skills | Copilot |
 | 2026-04-01 | Clarified IDO as a human opt-in workflow, added the issue-driven instructions document, and aligned source-of-truth references with the assets that actually exist in the template | Copilot |
 | 2026-03-29 | Replaced `agent-browser` skill with `playwright-cli`; added `browser-tooling.instructions.md`, `browser-workflow.prompt.md`, and established the browser tooling architecture captured in AD-013 | Copilot |
 | 2026-03-31 | delete and remove references to: `browser-workflow.prompt.md`, `REFERENCE.md` artifact, `CHEAT_SHEET.md` and agent-browser skill | Replaced by the more robust and flexible `playwright-cli` workflow and consolidated README, SKILL and instruction files; see AD-013 for the new architecture |
