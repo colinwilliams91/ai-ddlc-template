@@ -1,6 +1,13 @@
 <!-- markdownlint-disable -->
 # Changelog
 
+## [1.0.1](https://github.com/colinwilliams91/gaitor-orchestrator-cli/compare/v1.0.0...v1.0.1) (2026-04-04)
+
+
+### Bug Fixes
+
+* **changelog:** add html comment disable linter in changelog file for CI pipeline ([be36b45](https://github.com/colinwilliams91/gaitor-orchestrator-cli/commit/be36b458d6e0e780c8e0ad85acba039c81564e7c))
+
 ## [1.0.0](https://github.com/colinwilliams91/gaitor-orchestrator-cli/compare/v0.1.0...v1.0.0) (2026-04-04)
 
 
